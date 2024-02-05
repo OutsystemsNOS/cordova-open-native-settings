@@ -23,6 +23,8 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 
+import android.content.ComponentName;
+
 public class NativeSettings extends CordovaPlugin {
 
     @Override
