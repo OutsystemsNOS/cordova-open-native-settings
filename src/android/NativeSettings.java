@@ -23,8 +23,6 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 
-import android.content.ComponentName;
-
 public class NativeSettings extends CordovaPlugin {
 
     @Override
@@ -164,8 +162,6 @@ public class NativeSettings extends CordovaPlugin {
             intent = new Intent(android.provider.Settings.ACTION_WIFI_IP_SETTINGS);
         } else if (action.equals("wifi")) {
             intent = new Intent(android.provider.Settings.ACTION_WIFI_SETTINGS);
-        } else if (action.equals("software_update")) {
-	    intent.setComponent(ComponentName.unflattenFromString("com.google.android.gsf/.update.SystemUpdateActivity"));
         } else if (action.equals("wireless")) {
             intent = new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS);
         } else {
