@@ -2,8 +2,27 @@
 
 @implementation NativeSettings
 
+//mlrosa - Deprecated by apple
+/*
 - (BOOL)do_open:(NSString *)pref {
     if ([[UIApplication sharedApplication] openURL:[NSURL URLWithString:pref]]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+*/
+
+//new version of do_open 
+- (BOOL)do_open:(NSString *)pref {
+    NSURL *url = [NSURL URLWithString:pref];
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url
+                                           options:@{}
+                                 completionHandler:^(BOOL success) {
+                                     // Você pode adicionar logs ou outras ações aqui se quiser
+                                     NSLog(@"Abrir URL %@ foi %@", pref, success ? @"bem-sucedido" : @"mal-sucedido");
+                                 }];
         return YES;
     } else {
         return NO;
