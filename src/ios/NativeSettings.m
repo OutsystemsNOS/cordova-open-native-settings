@@ -20,8 +20,7 @@
         [[UIApplication sharedApplication] openURL:url
                                            options:@{}
                                  completionHandler:^(BOOL success) {
-                                     // Você pode adicionar logs ou outras ações aqui se quiser
-                                     NSLog(@"Abrir URL %@ foi %@", pref, success ? @"bem-sucedido" : @"mal-sucedido");
+                                     NSLog(@"Abrir URL %@ foi %@", pref, success ? @"Success" : @"Error");
                                  }];
         return YES;
     } else {
